@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
     recordButton.addEventListener("click", function() {
-      chrome.runtime.sendMessage({ action: "recordGesture" });
+      var selectedWebsite = websiteSelect.value;
+      chrome.runtime.sendMessage({ action: "recordGesture", website: selectedWebsite });
     });
   });
